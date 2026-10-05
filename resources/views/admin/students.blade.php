@@ -3,15 +3,15 @@
     @php
         $students = [
             ['id' => 1, 'name' => 'Bhishma', 'classroom' => '11 PPLG 2'],
-            ['id' => 2, 'name' => 'Andi', 'classroom' => '11 PPLG 2'],
-            ['id' => 3, 'name' => 'Budi', 'classroom' => '11 PPLG 1'],
-            ['id' => 4, 'name' => 'Citra', 'classroom' => '11 PPLG 1'],
-            ['id' => 5, 'name' => 'Dimas', 'classroom' => '11 PPLG 2'],
-            ['id' => 6, 'name' => 'Eka', 'classroom' => '11 PPLG 1'],
-            ['id' => 7, 'name' => 'Fajar', 'classroom' => '11 PPLG 2'],
-            ['id' => 8, 'name' => 'Gilang', 'classroom' => '11 PPLG 1'],
-            ['id' => 9, 'name' => 'Hana', 'classroom' => '11 PPLG 2'],
-            ['id' => 10, 'name' => 'Indra', 'classroom' => '11 PPLG 1'],
+            ['id' => 2, 'name' => 'Dani', 'classroom' => '11 PPLG 2'],
+            ['id' => 3, 'name' => 'Giga', 'classroom' => '11 PPLG 1'],
+            ['id' => 4, 'name' => 'Iyan', 'classroom' => '11 PPLG 1'],
+            ['id' => 5, 'name' => 'Abdillah', 'classroom' => '11 PPLG 2'],
+            ['id' => 6, 'name' => 'Pandu', 'classroom' => '11 PPLG 1'],
+            ['id' => 7, 'name' => 'Rafif', 'classroom' => '11 PPLG 2'],
+            ['id' => 8, 'name' => 'Dika', 'classroom' => '11 PPLG 1'],
+            ['id' => 9, 'name' => 'Haqi', 'classroom' => '11 PPLG 2'],
+            ['id' => 10, 'name' => 'Abel', 'classroom' => '11 PPLG 1'],
         ];
     @endphp
 
