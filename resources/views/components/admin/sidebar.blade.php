@@ -35,6 +35,20 @@
                     </x-slot:icon>
                 </x-admin.menu-item>
 
+                            {{-- Students --}}
+            <x-admin.menu-item
+                href="/admin/students"
+                label="Students"
+            >
+                <x-slot:icon>
+                    <path
+                        fill-rule="evenodd"
+                        d="M8 10a3 3 0 100-6 3 3 0 000 6zm-5 8a5 5 0 0110 0H3zm12-7a3 3 0 100-6 3 3 0 000 6zm-2 2a5 5 0 014 5h-4.5a6.97 6.97 0 00-2.5-4.9A5 5 0 0113 13z"
+                        clip-rule="evenodd"
+                    />
+                </x-slot:icon>
+            </x-admin.menu-item>
+
             </ul>
 
         </div>
