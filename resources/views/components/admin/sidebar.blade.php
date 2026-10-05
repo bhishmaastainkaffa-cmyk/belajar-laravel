@@ -37,8 +37,8 @@
 
                             {{-- Students --}}
             <x-admin.menu-item
-                href="/admin/students"
-                label="Students"
+                href="/admin/student"
+                label="Student"
             >
                 <x-slot:icon>
                     <path
