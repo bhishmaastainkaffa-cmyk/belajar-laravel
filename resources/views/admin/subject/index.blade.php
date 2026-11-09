@@ -1,3 +1,4 @@
+
 <x-admin.layout>
 
     <div class="col-span-full">
@@ -10,14 +11,14 @@
                 </h1>
 
                 <p class="text-gray-500 dark:text-gray-400">
-                    Student data
+                    Subject data
                 </p>
             </div>
 
             <button
                 type="button"
                 class="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700">
-                Add Student
+                Add Subject
             </button>
         </div>
 
@@ -29,15 +30,14 @@
                 <thead class="text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
                         <th class="px-6 py-3">No</th>
-                        <th class="px-6 py-3">NIS</th>
-                        <th class="px-6 py-3">Name</th>
-                        <th class="px-6 py-3">Class</th>
+                        <th class="px-6 py-3">Subject Name</th>
+                        <th class="px-6 py-3">Teacher</th>
                     </tr>
                 </thead>
 
                 <tbody>
 
-                    @foreach ($students as $index => $student)
+                    @foreach ($subjects as $index => $subject)
 
                         <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
 
@@ -45,16 +45,12 @@
                                 {{ $index + 1 }}
                             </td>
 
-                            <td class="px-6 py-4">
-                                {{ $student['nis'] }}
-                            </td>
-
                             <td class="px-6 py-4 font-medium text-gray-900 dark:text-white">
-                                {{ $student['name'] }}
+                                {{ $subject->name }}
                             </td>
 
                             <td class="px-6 py-4">
-                                {{ $student['class'] }}
+                                {{ $subject->teacher?->name ?? '-' }}
                             </td>
 
                         </tr>

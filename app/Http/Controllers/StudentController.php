@@ -2,26 +2,42 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Student;
+use App\Models\Classroom;
+use Illuminate\Http\Request;
+
 class StudentController extends Controller
 {
     public function index()
     {
-        $students = [
-            ['nis' => '1001', 'name' => 'Bhishma', 'class' => '11 PPLG 2'],
-            ['nis' => '1002', 'name' => 'Dani', 'class' => '11 PPLG 2'],
-            ['nis' => '1003', 'name' => 'Giga', 'class' => '11 PPLG 1'],
-            ['nis' => '1004', 'name' => 'Iyan', 'class' => '11 PPLG 1'],
-            ['nis' => '1005', 'name' => 'Abdillah', 'class' => '11 PPLG 2'],
-            ['nis' => '1006', 'name' => 'Pandu', 'class' => '11 PPLG 1'],
-            ['nis' => '1007', 'name' => 'Rafif', 'class' => '11 PPLG 2'],
-            ['nis' => '1008', 'name' => 'Dika', 'class' => '11 PPLG 1'],
-            ['nis' => '1009', 'name' => 'Haqi', 'class' => '11 PPLG 2'],
-            ['nis' => '1010', 'name' => 'Abel', 'class' => '11 PPLG 1'],
-        ];
+        $students = Student::all();
+        $classrooms = Classroom::all();
 
-        return view('admin.student', [
+        return view('admin.student.index', [
             'title' => 'Students',
             'students' => $students,
+            'classrooms' => $classrooms,
         ]);
+    }
+
+    public function store(Request $request)
+    {
+        $validated = $request->validate([
+            'nis' => 'required|string|max:20|unique:students,nis',
+            'name' => 'required|string|max:255',
+            'classroom_id' => 'required|exists:classrooms,id',
+        ], [
+            'nis.required' => 'NIS wajib diisi.',
+            'nis.unique' => 'NIS sudah digunakan.',
+            'name.required' => 'Nama siswa wajib diisi.',
+            'classroom_id.required' => 'Kelas wajib dipilih.',
+            'classroom_id.exists' => 'Kelas tidak ditemukan.',
+        ]);
+
+        Student::create($validated);
+
+        return redirect()
+            ->route('students.index')
+            ->with('success', 'Data siswa berhasil ditambahkan.');
     }
 }
